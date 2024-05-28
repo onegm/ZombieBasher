@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://y7573egc7yml"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_7mwcr"]
-[ext_resource type="PackedScene" uid="uid://5nxdore3bgcy" path="res://player.tscn" id="1_b4hr8"]
-[ext_resource type="PackedScene" uid="uid://cdq2mn73x5nr4" path="res://tree.tscn" id="2_p2xvj"]
-[ext_resource type="PackedScene" uid="uid://bxi7gi74umo0k" path="res://mob.tscn" id="3_vckvb"]
+[ext_resource type="PackedScene" uid="uid://5nxdore3bgcy" path="res://characters/happy_boo/player.tscn" id="1_b4hr8"]
+[ext_resource type="PackedScene" uid="uid://cdq2mn73x5nr4" path="res://trees/tree.tscn" id="2_p2xvj"]
+[ext_resource type="PackedScene" uid="uid://bxi7gi74umo0k" path="res://characters/slime/mob.tscn" id="3_vckvb"]
 
 [sub_resource type="Curve2D" id="Curve2D_8xtnu"]
 _data = {
@@ -24,13 +24,14 @@ offset_right = 1985.0
 offset_bottom = 1104.0
 
 [node name="Player" parent="." instance=ExtResource("1_b4hr8")]
-position = Vector2(661, 368)
+position = Vector2(1775, 568)
 
 [node name="SpawnPath" type="Path2D" parent="Player"]
 position = Vector2(-950, -619)
 curve = SubResource("Curve2D_8xtnu")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Player/SpawnPath"]
+position = Vector2(-177, -61)
 rotation = 1.58345
 rotates = false
 
