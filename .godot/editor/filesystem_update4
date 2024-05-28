@@ -1,0 +1,13 @@
+res://characters/happy_boo/happy_boo.tscn
+res://player.tscn
+res://player.gd
+res://game.tscn
+res://tree.tscn
+res://mob.tscn
+res://mob.gd
+res://characters/slime/slime.tscn
+res://gun.tscn
+res://gun.gd
+res://bullet.tscn
+res://bullet.gd
+res://game.gd
