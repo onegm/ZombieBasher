@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://y7573egc7yml"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_7mwcr"]
-[ext_resource type="PackedScene" uid="uid://5nxdore3bgcy" path="res://characters/happy_boo/player.tscn" id="1_b4hr8"]
+[ext_resource type="PackedScene" uid="uid://5nxdore3bgcy" path="res://characters/player/player.tscn" id="1_b4hr8"]
+[ext_resource type="PackedScene" uid="uid://dxcwp38vn1rsq" path="res://characters/enemies/super_slime/super_slime.tscn" id="2_8pbn8"]
 [ext_resource type="PackedScene" uid="uid://cdq2mn73x5nr4" path="res://trees/tree.tscn" id="2_p2xvj"]
-[ext_resource type="PackedScene" uid="uid://bxi7gi74umo0k" path="res://characters/slime/mob.tscn" id="3_vckvb"]
 
 [sub_resource type="Curve2D" id="Curve2D_8xtnu"]
 _data = {
@@ -14,7 +14,7 @@ point_count = 5
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_7mwcr")
-mob_scene = ExtResource("3_vckvb")
+enemy_scene = ExtResource("2_8pbn8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -3

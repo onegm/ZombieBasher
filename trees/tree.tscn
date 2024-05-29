@@ -1,8 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cdq2mn73x5nr4"]
 
-[ext_resource type="Texture2D" uid="uid://b7rhtttevhxtj" path="res://characters/slime/art/ground_shadow.png" id="1_p2ekk"]
+[ext_resource type="Texture2D" uid="uid://b7rhtttevhxtj" path="res://characters/enemies/slime/art/ground_shadow.png" id="1_p2ekk"]
 [ext_resource type="Texture2D" uid="uid://caqfk2xng5v5u" path="res://trees/pine_tree.png" id="2_nrkhx"]
-
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4g5s"]
 radius = 21.095

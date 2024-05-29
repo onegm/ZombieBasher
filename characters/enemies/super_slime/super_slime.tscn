@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxcwp38vn1rsq"]
+
+[ext_resource type="Script" path="res://characters/enemies/super_slime/super_slime.gd" id="1_rlhc3"]
+[ext_resource type="PackedScene" uid="uid://ogik4s70pgwl" path="res://characters/enemies/slime/art/slime_animations.tscn" id="2_cfpss"]
+[ext_resource type="PackedScene" uid="uid://dhmhmrth6rdce" path="res://VFX/smoke_explosion/smoke_explosion.tscn" id="2_osm02"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dsjb7"]
+radius = 43.2897
+
+[node name="SuperSlime" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+motion_mode = 1
+platform_floor_layers = 4294967040
+script = ExtResource("1_rlhc3")
+health = 10
+speed = 50
+death_scene = ExtResource("2_osm02")
+
+[node name="Animations" parent="." instance=ExtResource("2_cfpss")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -29)
+shape = SubResource("CircleShape2D_dsjb7")
