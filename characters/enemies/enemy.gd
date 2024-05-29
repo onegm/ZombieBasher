@@ -14,8 +14,8 @@ var death_scene : PackedScene
 var animations = $Animations
 
 func _ready():
-	#animations.play_walk()
-	pass
+	animations.play_walk()
+
 
 func _physics_process(_delta):
 	var direction = global_position.direction_to(player.global_position)
