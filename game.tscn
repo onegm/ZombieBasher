@@ -4,12 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://5nxdore3bgcy" path="res://characters/player/player.tscn" id="1_b4hr8"]
 [ext_resource type="PackedScene" uid="uid://dxcwp38vn1rsq" path="res://characters/enemies/super_slime/super_slime.tscn" id="2_8pbn8"]
 [ext_resource type="PackedScene" uid="uid://cdq2mn73x5nr4" path="res://trees/tree.tscn" id="2_p2xvj"]
-
-[sub_resource type="Curve2D" id="Curve2D_8xtnu"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -177, -61, 0, 0, 0, 0, -194, 1282, 0, 0, 0, 0, 2077, 1284, 0, 0, 0, 0, 2077, -67, 0, 0, 0, 0, -178, -60)
-}
-point_count = 5
+[ext_resource type="PackedScene" uid="uid://blqc7kyuoi1m5" path="res://util/enemy_spawner.tscn" id="4_drkt5"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -24,51 +19,45 @@ offset_right = 1985.0
 offset_bottom = 1104.0
 
 [node name="Player" parent="." instance=ExtResource("1_b4hr8")]
-position = Vector2(1775, 568)
+position = Vector2(461, 333)
 
-[node name="SpawnPath" type="Path2D" parent="Player"]
-position = Vector2(-950, -619)
-curve = SubResource("Curve2D_8xtnu")
+[node name="EnemySpawner" parent="Player" instance=ExtResource("4_drkt5")]
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Player/SpawnPath"]
-position = Vector2(-177, -61)
-rotation = 1.58345
-rotates = false
+[node name="Trees" type="Node2D" parent="."]
+y_sort_enabled = true
 
-[node name="Tree" parent="." instance=ExtResource("2_p2xvj")]
-position = Vector2(444, 382)
+[node name="Tree" parent="Trees" instance=ExtResource("2_p2xvj")]
+position = Vector2(459, 384)
 
-[node name="Tree2" parent="." instance=ExtResource("2_p2xvj")]
-position = Vector2(514, 386)
+[node name="Tree2" parent="Trees" instance=ExtResource("2_p2xvj")]
+position = Vector2(527, 424)
 
-[node name="Tree3" parent="." instance=ExtResource("2_p2xvj")]
-position = Vector2(446, 436)
+[node name="Tree3" parent="Trees" instance=ExtResource("2_p2xvj")]
+position = Vector2(797, 797)
 
-[node name="Tree4" parent="." instance=ExtResource("2_p2xvj")]
-position = Vector2(1454, 842)
+[node name="Tree4" parent="Trees" instance=ExtResource("2_p2xvj")]
+position = Vector2(628, 863)
 
-[node name="Tree5" parent="." instance=ExtResource("2_p2xvj")]
-position = Vector2(1524, 820)
+[node name="Tree5" parent="Trees" instance=ExtResource("2_p2xvj")]
+position = Vector2(915, 964)
 
-[node name="Tree6" parent="." instance=ExtResource("2_p2xvj")]
-position = Vector2(1620, 849)
+[node name="Tree6" parent="Trees" instance=ExtResource("2_p2xvj")]
+position = Vector2(1507, 581)
 
-[node name="Tree7" parent="." instance=ExtResource("2_p2xvj")]
-position = Vector2(1405, 285)
+[node name="Tree7" parent="Trees" instance=ExtResource("2_p2xvj")]
+position = Vector2(1427, 608)
 
-[node name="Tree8" parent="." instance=ExtResource("2_p2xvj")]
-position = Vector2(1140, 663)
+[node name="Tree8" parent="Trees" instance=ExtResource("2_p2xvj")]
+position = Vector2(1821, 985)
 
-[node name="Tree9" parent="." instance=ExtResource("2_p2xvj")]
-position = Vector2(246, 128)
+[node name="Tree9" parent="Trees" instance=ExtResource("2_p2xvj")]
+position = Vector2(1842, 112)
 
-[node name="Tree10" parent="." instance=ExtResource("2_p2xvj")]
-position = Vector2(428, 914)
-
-[node name="Tree11" parent="." instance=ExtResource("2_p2xvj")]
-position = Vector2(858, 464)
+[node name="Tree10" parent="Trees" instance=ExtResource("2_p2xvj")]
+position = Vector2(1868, 184)
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
 autostart = true
 
 [node name="GameOverLayer" type="CanvasLayer" parent="."]

@@ -9,8 +9,10 @@ radius = 43.2897
 
 [node name="SuperSlime" type="CharacterBody2D"]
 scale = Vector2(2, 2)
+collision_layer = 2
+collision_mask = 3
 motion_mode = 1
-platform_floor_layers = 4294967040
+platform_floor_layers = 4294901760
 script = ExtResource("1_rlhc3")
 health = 10
 speed = 50

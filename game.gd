@@ -3,9 +3,6 @@ extends Node2D
 @export
 var enemy_scene : PackedScene
 
-@onready
-var spawn_path = $Player/SpawnPath/PathFollow2D
-
 func _ready():
 	$Timer.timeout.connect(spawn_enemy)
 	$Player.health_depleted.connect(on_player_health_depleted)
@@ -13,9 +10,10 @@ func _ready():
 		spawn_enemy()
 
 func spawn_enemy():
-	var enemy = enemy_scene.instantiate()
-	spawn_path.progress_ratio = randf()
-	enemy.global_position = spawn_path.global_position
+	#var enemy = enemy_scene.instantiate()
+	#spawn_path.progress_ratio = randf()
+	#enemy.global_position = spawn_path.global_position
+	var enemy = $Player/EnemySpawner.spawn_enemy()
 	enemy.player = $Player
 	add_child(enemy)
 
