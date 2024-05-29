@@ -5,6 +5,9 @@ var damage = 1
 var max_range = 1200
 var travelled_distance = 0
 
+@export
+var impact_scene : PackedScene
+
 func _ready():
 	body_entered.connect(on_body_entered)
 
@@ -21,3 +24,7 @@ func on_body_entered(body):
 	queue_free()
 	if body.has_method("take_damage"):
 		body.take_damage(damage)
+	
+	var impact = impact_scene.instantiate()
+	impact.global_position = global_position
+	add_sibling(impact)

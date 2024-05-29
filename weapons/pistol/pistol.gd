@@ -4,6 +4,9 @@ class_name Gun
 @onready
 var bullet_point = $GunPivotPoint/Pistol/BulletPoint
 
+@export
+var muzzle_flash : PackedScene
+
 func target_enemy(enemies_in_range):
 	var closest = enemies_in_range.front()
 	var distance = global_position.distance_to(closest.global_position)
@@ -19,3 +22,9 @@ func shoot():
 	bullet.global_position = bullet_point.global_position
 	bullet.global_rotation = bullet_point.global_rotation
 	bullet_point.add_child(bullet)
+	
+	var flash = muzzle_flash.instantiate()
+	flash.global_position = Vector2.ZERO
+	bullet_point.add_child(flash)
+	
+	

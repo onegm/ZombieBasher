@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://buwbdnbx71mx1"]
+[gd_scene load_steps=6 format=3 uid="uid://buwbdnbx71mx1"]
 
 [ext_resource type="Script" path="res://weapons/pistol/pistol.gd" id="1_stn2x"]
+[ext_resource type="PackedScene" uid="uid://c1b2kbuq1if08" path="res://VFX/muzzle_flash/muzzle_flash.tscn" id="2_06nw8"]
 [ext_resource type="PackedScene" uid="uid://pw413e725wqw" path="res://weapons/pistol/bullet/bullet.tscn" id="2_pe3e1"]
 [ext_resource type="Texture2D" uid="uid://cswb5do8rrj7q" path="res://weapons/pistol/pistol.png" id="3_dvr7i"]
 
@@ -11,6 +12,7 @@ radius = 636.028
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_stn2x")
+muzzle_flash = ExtResource("2_06nw8")
 bullet_scene = ExtResource("2_pe3e1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
