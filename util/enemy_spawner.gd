@@ -1,7 +1,7 @@
 extends Node2D
 
 const slime_scene = preload("res://characters/enemies/slime/slime.tscn")
-const super_slime_scene = preload("res://characters/enemies/super_slime/super_slime.tscn")
+const super_slime_scene = preload("res://characters/zombie/zombie.tscn")
 
 @onready
 var spawn_path = $SpawnPath/PathFollow2D

@@ -14,7 +14,8 @@ var death_scene : PackedScene
 var animations = $Animations
 
 func _ready():
-	animations.play_walk()
+	#animations.play_walk()
+	pass
 
 func _physics_process(_delta):
 	var direction = global_position.direction_to(player.global_position)
@@ -22,10 +23,10 @@ func _physics_process(_delta):
 	move_and_slide()
 	
 func take_damage(damage):
-	animations.play_hurt()
+	#animations.play_hurt()
 	health -= damage
 	if health <= 0:
 		queue_free()
-		var death_animation = death_scene.instantiate()
-		death_animation.global_position = global_position
-		add_sibling(death_animation)
+		#var death_animation = death_scene.instantiate()
+		#death_animation.global_position = global_position
+		#add_sibling(death_animation)
