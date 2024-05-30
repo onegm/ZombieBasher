@@ -81,7 +81,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-BackgroundMusic="*res://background_music.tscn"
+BackgroundMusic="*res://audio/background_music.tscn"
 
 [display]
 
