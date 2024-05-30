@@ -1,6 +1,6 @@
-TileMap
-RichTextLabel
 Button
+RichTextLabel
+TileMap
 Sprite2D
 ColorRect
 AudioStreamPlayer

@@ -1,9 +1,9 @@
 extends Control
 
-@export
-var start_scene : PackedScene
-@export
-var credits_scene : PackedScene
+@onready
+var start_scene : PackedScene = preload("res://game.tscn")
+@onready
+var credits_scene : PackedScene = preload("res://ui/credits/credits_page.tscn")
 
 func _ready():
 	$StartButton.pressed.connect(on_start_button_pressed)

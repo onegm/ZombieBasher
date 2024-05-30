@@ -6,13 +6,11 @@ var enemy_scene : PackedScene
 func _ready():
 	$Timer.timeout.connect(spawn_enemy)
 	$Player.health_depleted.connect(on_player_health_depleted)
+	$GameOverLayer/ColorRect/HomeButton.pressed.connect(on_home_button_pressed)
 	for i in range(7):
 		spawn_enemy()
 
 func spawn_enemy():
-	#var enemy = enemy_scene.instantiate()
-	#spawn_path.progress_ratio = randf()
-	#enemy.global_position = spawn_path.global_position
 	var enemy = $Player/EnemySpawner.spawn_enemy()
 	enemy.player = $Player
 	add_child(enemy)
@@ -20,3 +18,9 @@ func spawn_enemy():
 func on_player_health_depleted():
 	$GameOverLayer.set_visible(true)
 	get_tree().set_pause(true)
+
+func on_home_button_pressed():
+	var home_scene : PackedScene = load("res://ui/start_menu/start_menu.tscn")
+	get_tree().set_pause(false)	
+	get_tree().change_scene_to_packed(home_scene)
+
