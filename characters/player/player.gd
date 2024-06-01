@@ -15,7 +15,6 @@ func _physics_process(delta):
 	
 	velocity = direction * speed
 	animations.look_at(get_global_mouse_position())
-	animations.rotate(-PI/2)
 	move_and_slide()
 	
 	if velocity.length() > 0.0:

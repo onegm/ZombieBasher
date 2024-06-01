@@ -45,15 +45,12 @@ script = ExtResource("1_mxavk")
 
 [node name="Animations" parent="." instance=ExtResource("2_acaa7")]
 
-[node name="Pistol" parent="Animations" instance=ExtResource("3_7ns5k")]
-position = Vector2(19, 26)
-
-[node name="Femur" parent="Animations" instance=ExtResource("4_v0500")]
-position = Vector2(19, 26)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_8mguc")
+
+[node name="Pistol" parent="." instance=ExtResource("3_7ns5k")]
+visible = false
 
 [node name="HitBox" type="Area2D" parent="."]
 position = Vector2(1, 0)
@@ -76,5 +73,6 @@ value = 100.0
 show_percentage = false
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-energy = 0.5
 texture = SubResource("GradientTexture2D_jklk3")
+
+[node name="Femur" parent="." instance=ExtResource("4_v0500")]

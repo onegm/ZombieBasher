@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://game.gd" id="1_7mwcr"]
 [ext_resource type="PackedScene" uid="uid://5nxdore3bgcy" path="res://characters/player/player.tscn" id="1_b4hr8"]
 [ext_resource type="PackedScene" uid="uid://dxcwp38vn1rsq" path="res://characters/enemies/super_slime/super_slime.tscn" id="2_8pbn8"]
-[ext_resource type="PackedScene" uid="uid://blqc7kyuoi1m5" path="res://util/enemy_spawner.tscn" id="4_drkt5"]
+[ext_resource type="PackedScene" uid="uid://blqc7kyuoi1m5" path="res://util/enemy_spawner/enemy_spawner.tscn" id="4_drkt5"]
 [ext_resource type="PackedScene" uid="uid://brfd7g3ffffmi" path="res://levels/level1.tscn" id="6_6ak2d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2iaoi"]
@@ -14,7 +14,7 @@ script = ExtResource("1_7mwcr")
 enemy_scene = ExtResource("2_8pbn8")
 
 [node name="Player" parent="." instance=ExtResource("1_b4hr8")]
-position = Vector2(431, 284)
+position = Vector2(889, 365)
 
 [node name="EnemySpawner" parent="Player" instance=ExtResource("4_drkt5")]
 
@@ -87,5 +87,4 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_2iaoi")
 text = " Start Menu "
 
 [node name="Level" parent="." instance=ExtResource("6_6ak2d")]
-z_index = 1
 y_sort_enabled = true
