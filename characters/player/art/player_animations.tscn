@@ -1,12 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://pbmyh1qru7p"]
+[gd_scene load_steps=13 format=3 uid="uid://pbmyh1qru7p"]
 
-[ext_resource type="Script" path="res://characters/player/art/happy_boo.gd" id="1_kg7lb"]
-[ext_resource type="Texture2D" uid="uid://b7rhtttevhxtj" path="res://characters/enemies/slime/art/ground_shadow.png" id="2_62bos"]
-[ext_resource type="Texture2D" uid="uid://ng8e5ot0dtpd" path="res://characters/player/art/square_foot.png" id="3_186qq"]
-[ext_resource type="Texture2D" uid="uid://dhapxq8y8ow57" path="res://characters/player/art/square_lower_leg.png" id="4_plnsd"]
-[ext_resource type="Texture2D" uid="uid://qmqpm6asge1i" path="res://characters/player/art/square_upper_leg.png" id="5_q2t1e"]
-[ext_resource type="Texture2D" uid="uid://cksiu5gst6fmp" path="res://characters/player/art/square_body.png" id="6_w3ck4"]
-[ext_resource type="Texture2D" uid="uid://cvs0lh814pk7h" path="res://characters/player/art/square_face.png" id="7_h5h8s"]
+[ext_resource type="Script" path="res://characters/player/art/player_animations.gd" id="1_sirfq"]
+[ext_resource type="Texture2D" uid="uid://b7rhtttevhxtj" path="res://characters/enemies/slime/art/ground_shadow.png" id="2_hi7lp"]
+[ext_resource type="Texture2D" uid="uid://qmqpm6asge1i" path="res://characters/player/art/square_upper_leg.png" id="3_8i7kt"]
+[ext_resource type="Texture2D" uid="uid://dhapxq8y8ow57" path="res://characters/player/art/square_lower_leg.png" id="4_puiwj"]
+[ext_resource type="Texture2D" uid="uid://ng8e5ot0dtpd" path="res://characters/player/art/square_foot.png" id="5_57uhe"]
+[ext_resource type="Texture2D" uid="uid://cksiu5gst6fmp" path="res://characters/player/art/square_body.png" id="6_ykx3w"]
+[ext_resource type="Texture2D" uid="uid://cvs0lh814pk7h" path="res://characters/player/art/square_face.png" id="7_xdiyq"]
+[ext_resource type="Texture2D" uid="uid://c42ag8qgb84h2" path="res://characters/player/art/girl.png" id="8_h77wl"]
 
 [sub_resource type="Animation" id="Animation_hed62"]
 length = 0.001
@@ -581,10 +582,10 @@ _data = {
 }
 
 [node name="HappyBoo" type="Node2D"]
-script = ExtResource("1_kg7lb")
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_sirfq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_wrcpu")
 }
@@ -596,57 +597,89 @@ z_index = -1
 z_as_relative = false
 position = Vector2(1.90735e-06, 0)
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("2_62bos")
+texture = ExtResource("2_hi7lp")
 metadata/_edit_lock_ = true
 
 [node name="Colorizer" type="Node2D" parent="."]
+visible = false
 modulate = Color(1, 0.572549, 0.176471, 1)
 
 [node name="SquareUpperLegL" type="Sprite2D" parent="Colorizer"]
 position = Vector2(-10.6303, -27.3998)
 rotation = 0.4009
 scale = Vector2(0.997829, 0.999794)
-texture = ExtResource("5_q2t1e")
+texture = ExtResource("3_8i7kt")
 offset = Vector2(0, 6)
 
 [node name="SquareLowerLegL" type="Sprite2D" parent="Colorizer/SquareUpperLegL"]
 position = Vector2(0, 14)
-texture = ExtResource("4_plnsd")
+texture = ExtResource("4_puiwj")
 offset = Vector2(0, 6)
 
 [node name="SquareFootL" type="Sprite2D" parent="Colorizer/SquareUpperLegL/SquareLowerLegL"]
 position = Vector2(0, 12)
 rotation = -3.40666
 scale = Vector2(1.01116, 1)
-texture = ExtResource("3_186qq")
+texture = ExtResource("5_57uhe")
 offset = Vector2(-4, 0)
 
 [node name="SquareUpperLegR" type="Sprite2D" parent="Colorizer"]
 position = Vector2(9.20459, -29.9444)
 rotation = -0.213676
 scale = Vector2(0.999794, 0.999794)
-texture = ExtResource("5_q2t1e")
+texture = ExtResource("3_8i7kt")
 offset = Vector2(0, 6)
 
 [node name="SquareLowerLegR" type="Sprite2D" parent="Colorizer/SquareUpperLegR"]
 position = Vector2(-4.76837e-07, 14)
-texture = ExtResource("4_plnsd")
+texture = ExtResource("4_puiwj")
 offset = Vector2(0, 6)
 
 [node name="SquareFootR" type="Sprite2D" parent="Colorizer/SquareUpperLegR/SquareLowerLegR"]
 position = Vector2(0, 12)
 rotation = -2.92296
-texture = ExtResource("3_186qq")
+texture = ExtResource("5_57uhe")
 offset = Vector2(-4, 0)
 
 [node name="SquareBody" type="Sprite2D" parent="Colorizer"]
 position = Vector2(-1.73067, -36.6061)
 rotation = -0.0250386
 scale = Vector2(0.9842, 0.990263)
-texture = ExtResource("6_w3ck4")
+texture = ExtResource("6_ykx3w")
 offset = Vector2(0, -23)
 
 [node name="SquareFace" type="Sprite2D" parent="Colorizer/SquareBody"]
 position = Vector2(0, -17)
-texture = ExtResource("7_h5h8s")
+texture = ExtResource("7_xdiyq")
 metadata/_edit_lock_ = true
+
+[node name="Head" type="Polygon2D" parent="."]
+color = Color(0.662745, 0.494118, 0.411765, 1)
+offset = Vector2(-62.17, -41.835)
+texture = ExtResource("8_h77wl")
+polygon = PackedVector2Array(33.6011, 7.36278, 31.7269, 29.8527, 31.593, 44.7122, 35.4752, 58.9023, 47.925, 70.0134, 65.0602, 72.9585, 78.8487, 68.9424, 93.5743, 57.162, 97.8581, 35.4752, 93.9759, 26.506, 94.5114, 13.9224, 92.1017, 1.74029, 70.4741, -1.72414, 46.837, -1.70316)
+uv = PackedVector2Array(33.6011, 7.36278, 31.7269, 29.8527, 31.593, 44.7122, 35.4752, 58.9023, 47.925, 70.0134, 65.0602, 72.9585, 78.8487, 68.9424, 93.5743, 57.162, 97.8581, 35.4752, 93.9759, 26.506, 94.5114, 13.9224, 92.1017, 1.74029, 70.4741, -1.72414, 46.837, -1.70316)
+
+[node name="Hair" type="Polygon2D" parent="Head"]
+rotation = 1.61255
+color = Color(0.729412, 0.596078, 0.0352941, 1)
+offset = Vector2(-30.935, -35.65)
+texture = ExtResource("8_h77wl")
+polygon = PackedVector2Array(33.455, 7.54258, 32.2384, 27.9805, 31.5085, 42.7007, 35.2798, 62.2871, 31.5085, 64.9635, 20.3163, 64.7202, 8.27251, 57.7859, 2.18978, 42.944, 0.729927, 29.927, 3.16302, 18.7348, 9.3674, 12.6521, 19.0998, 8.51581, 28.4672, 6.93431)
+uv = PackedVector2Array(33.455, 7.54258, 32.2384, 27.9805, 31.5085, 42.7007, 35.2798, 62.2871, 31.5085, 64.9635, 20.3163, 64.7202, 8.27251, 57.7859, 2.18978, 42.944, 0.729927, 29.927, 3.16302, 18.7348, 9.3674, 12.6521, 19.0998, 8.51581, 28.4672, 6.93431)
+
+[node name="HandR" type="Polygon2D" parent="."]
+position = Vector2(-27, 20)
+color = Color(0.662745, 0.494118, 0.411765, 1)
+offset = Vector2(-42.1, -83.815)
+texture = ExtResource("8_h77wl")
+polygon = PackedVector2Array(34.0027, 72.9585, 30.9237, 85.0067, 34.0027, 93.1727, 38.9558, 93.7082, 49.5315, 93.7082, 53.0121, 87.5502, 54.7523, 81.2584, 52.3427, 73.494, 45.2477, 69.7457, 39.2236, 70.2811)
+uv = PackedVector2Array(34.0027, 72.9585, 30.9237, 85.0067, 34.0027, 93.1727, 38.9558, 93.7082, 49.5315, 93.7082, 53.0121, 87.5502, 54.7523, 81.2584, 52.3427, 73.494, 45.2477, 69.7457, 39.2236, 70.2811)
+
+[node name="HandL" type="Polygon2D" parent="."]
+position = Vector2(28, 20)
+color = Color(0.662745, 0.494118, 0.411765, 1)
+offset = Vector2(-83.205, -81.54)
+texture = ExtResource("8_h77wl")
+polygon = PackedVector2Array(72.1553, 74.0295, 80.7229, 67.6038, 89.5582, 69.2102, 93.842, 73.8956, 95.4485, 83.4003, 91.7001, 90.3615, 80.589, 93.1727, 72.1553, 87.8179, 72.423, 78.9826)
+uv = PackedVector2Array(72.1553, 74.0295, 80.7229, 67.6038, 89.5582, 69.2102, 93.842, 73.8956, 95.4485, 83.4003, 91.7001, 90.3615, 80.589, 93.1727, 72.1553, 87.8179, 72.423, 78.9826)

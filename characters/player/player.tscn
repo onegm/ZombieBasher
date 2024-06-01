@@ -1,14 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://5nxdore3bgcy"]
+[gd_scene load_steps=10 format=3 uid="uid://5nxdore3bgcy"]
 
-[ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/player/art/happy_boo.tscn" id="1_kudgp"]
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_mxavk"]
+[ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/player/art/player_animations.tscn" id="2_acaa7"]
 [ext_resource type="PackedScene" uid="uid://buwbdnbx71mx1" path="res://weapons/pistol/pistol.tscn" id="3_7ns5k"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8mguc"]
-radius = 28.8617
+radius = 35.0143
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nq2lq"]
-radius = 36.3456
+radius = 41.0488
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6848o"]
 bg_color = Color(0.619608, 0, 0.113725, 1)
@@ -24,30 +24,45 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animations")]
+[sub_resource type="Gradient" id="Gradient_nc81o"]
+offsets = PackedFloat32Array(0, 0.727273)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jklk3"]
+gradient = SubResource("Gradient_nc81o")
+width = 80
+height = 80
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 5
 motion_mode = 1
 platform_floor_layers = 4294901760
 script = ExtResource("1_mxavk")
-animations = NodePath("HappyBoo")
 
-[node name="HappyBoo" parent="." instance=ExtResource("1_kudgp")]
+[node name="Animations" parent="." instance=ExtResource("2_acaa7")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -10)
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_8mguc")
 
 [node name="Pistol" parent="." instance=ExtResource("3_7ns5k")]
-position = Vector2(0, -41)
+collision_layer = 2
+collision_mask = 5
 
 [node name="HitBox" type="Area2D" parent="."]
-position = Vector2(1, -17)
-collision_mask = 2
+position = Vector2(1, 0)
+collision_layer = 2
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 shape = SubResource("CircleShape2D_nq2lq")
 debug_color = Color(0.847059, 0.313726, 0.541176, 0.419608)
 
 [node name="HealthBar" type="ProgressBar" parent="."]
+z_index = 1
 offset_left = -74.0
 offset_top = -122.0
 offset_right = 74.0
@@ -56,3 +71,6 @@ theme_override_styles/background = SubResource("StyleBoxFlat_6848o")
 theme_override_styles/fill = SubResource("StyleBoxFlat_o1fxm")
 value = 100.0
 show_percentage = false
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = SubResource("GradientTexture2D_jklk3")

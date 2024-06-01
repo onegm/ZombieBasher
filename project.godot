@@ -122,7 +122,10 @@ move_down={
 
 [layer_names]
 
+2d_physics/layer_1="Environment"
+2d_physics/layer_2="Character"
 3d_physics/layer_2="player"
+2d_physics/layer_3="Enemies"
 
 [rendering]
 

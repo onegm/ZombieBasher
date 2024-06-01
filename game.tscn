@@ -10,19 +10,27 @@
 bg_color = Color(0.843137, 0.447059, 0.619608, 1)
 
 [node name="Game" type="Node2D"]
-y_sort_enabled = true
 script = ExtResource("1_7mwcr")
 enemy_scene = ExtResource("2_8pbn8")
 
 [node name="Player" parent="." instance=ExtResource("1_b4hr8")]
-position = Vector2(461, 333)
+position = Vector2(431, 284)
 
 [node name="EnemySpawner" parent="Player" instance=ExtResource("4_drkt5")]
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(0.8, 0.8)
+zoom = Vector2(0.6, 0.6)
 limit_left = 0
 limit_top = 0
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.1
+drag_top_margin = 0.1
+drag_right_margin = 0.1
+drag_bottom_margin = 0.1
+editor_draw_drag_margin = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 1.5
@@ -79,4 +87,5 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_2iaoi")
 text = " Start Menu "
 
 [node name="Level" parent="." instance=ExtResource("6_6ak2d")]
+z_index = 1
 y_sort_enabled = true

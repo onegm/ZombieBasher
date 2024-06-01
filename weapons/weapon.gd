@@ -14,8 +14,9 @@ func _physics_process(_delta):
 	var enemies_in_range = get_overlapping_bodies()
 	
 	if enemies_in_range.size() > 0:
-		var enemy = target_enemy(enemies_in_range)
-		look_at(enemy.global_position)
+		var _enemy = target_enemy(enemies_in_range)
+		#look_at(enemy.global_position)
+		look_at(get_global_mouse_position())
 
 func shoot():
 	pass
