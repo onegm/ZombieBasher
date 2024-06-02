@@ -1,4 +1,4 @@
-extends Area2D
+extends Node2D
 
 var speed = 1000
 var damage = 1
@@ -9,7 +9,7 @@ var travelled_distance = 0
 var impact_scene : PackedScene
 
 func _ready():
-	body_entered.connect(on_body_entered)
+	$HitBox.area_entered.connect(on_impact)
 
 func _physics_process(delta):
 	var direction = Vector2.RIGHT.rotated(rotation)
@@ -20,11 +20,9 @@ func _physics_process(delta):
 	if travelled_distance > max_range:
 		queue_free()
 
-func on_body_entered(body):
+func on_impact(_area):
 	queue_free()
-	if body.has_method("take_damage"):
-		body.take_damage(damage)
-	
+
 	var impact = impact_scene.instantiate()
 	impact.global_position = global_position
 	add_sibling(impact)

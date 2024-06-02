@@ -3,12 +3,12 @@
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_mxavk"]
 [ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/player/art/player_animations.tscn" id="2_acaa7"]
 [ext_resource type="PackedScene" uid="uid://buwbdnbx71mx1" path="res://weapons/pistol/pistol.tscn" id="3_7ns5k"]
-[ext_resource type="PackedScene" uid="uid://gryefw43fjaj" path="res://weapons/femur/femur.tscn" id="4_v0500"]
+[ext_resource type="Script" path="res://weapons/hurt_box.gd" id="4_pwyg6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8mguc"]
 radius = 35.0143
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_nq2lq"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_h1m82"]
 radius = 41.0488
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6848o"]
@@ -46,23 +46,20 @@ script = ExtResource("1_mxavk")
 [node name="Animations" parent="." instance=ExtResource("2_acaa7")]
 
 [node name="Pistol" parent="Animations" instance=ExtResource("3_7ns5k")]
-position = Vector2(19, 26)
-
-[node name="Femur" parent="Animations" instance=ExtResource("4_v0500")]
-position = Vector2(19, 26)
+position = Vector2(18, 26)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_8mguc")
 
-[node name="HitBox" type="Area2D" parent="."]
-position = Vector2(1, 0)
+[node name="HurtBox" type="Area2D" parent="."]
 collision_layer = 2
-collision_mask = 4
+collision_mask = 5
+script = ExtResource("4_pwyg6")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-shape = SubResource("CircleShape2D_nq2lq")
-debug_color = Color(0.847059, 0.313726, 0.541176, 0.419608)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_h1m82")
+debug_color = Color(0.964706, 0, 0.498039, 0.419608)
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 z_index = 1

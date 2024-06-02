@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://dw8grcy03gux3"]
+[gd_scene load_steps=7 format=3 uid="uid://dw8grcy03gux3"]
 
 [ext_resource type="Script" path="res://characters/enemies/zombie/zombie.gd" id="1_dn7kf"]
 [ext_resource type="PackedScene" uid="uid://cc0a17mx5dfx8" path="res://characters/enemies/zombie/art/zombie_animations.tscn" id="2_1n6fi"]
+[ext_resource type="Script" path="res://weapons/hit_box.gd" id="3_ftnvd"]
+[ext_resource type="Script" path="res://weapons/hurt_box.gd" id="4_etgxg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8hunw"]
-radius = 25.1794
+radius = 20.7632
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pjipb"]
+radius = 25.3421
 
 [node name="Zombie" type="CharacterBody2D"]
 scale = Vector2(1.5, 1.5)
@@ -17,5 +22,26 @@ script = ExtResource("1_dn7kf")
 [node name="Animations" parent="." instance=ExtResource("2_1n6fi")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
+position = Vector2(0, 9.33333)
 shape = SubResource("CircleShape2D_8hunw")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("3_ftnvd")
+damage = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_pjipb")
+debug_color = Color(0.94739, 0.123681, 0.487933, 0.42)
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("4_etgxg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_pjipb")
+debug_color = Color(0.94739, 0.123681, 0.487933, 0.42)
