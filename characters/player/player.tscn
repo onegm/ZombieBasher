@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://5nxdore3bgcy"]
+[gd_scene load_steps=10 format=3 uid="uid://5nxdore3bgcy"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_mxavk"]
 [ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/player/art/player_animations.tscn" id="2_acaa7"]
-[ext_resource type="PackedScene" uid="uid://buwbdnbx71mx1" path="res://weapons/pistol/pistol.tscn" id="3_7ns5k"]
 [ext_resource type="Script" path="res://weapons/hurt_box.gd" id="4_pwyg6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8mguc"]
@@ -44,9 +43,6 @@ platform_floor_layers = 4294901760
 script = ExtResource("1_mxavk")
 
 [node name="Animations" parent="." instance=ExtResource("2_acaa7")]
-
-[node name="Pistol" parent="Animations" instance=ExtResource("3_7ns5k")]
-position = Vector2(19.3333, 26)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)

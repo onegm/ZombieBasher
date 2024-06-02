@@ -4,6 +4,7 @@ class_name Player
 var speed = 600
 var health = 100.0
 var damage_rate = 5.0
+var current_weapon : Weapon = null
 
 signal health_depleted
 
@@ -36,3 +37,10 @@ func take_damage(damage):
 	$HealthBar.set_value(health)
 	if health <= 0.0:
 		health_depleted.emit()
+		
+func set_weapon(weapon : Weapon):
+	if current_weapon != null:
+		current_weapon.queue_free()
+	current_weapon = weapon
+	animations.add_child(current_weapon)
+	current_weapon.set_position(Vector2(20, 26))
