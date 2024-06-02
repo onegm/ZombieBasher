@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://buwbdnbx71mx1"]
+[gd_scene load_steps=4 format=3 uid="uid://buwbdnbx71mx1"]
 
 [ext_resource type="Script" path="res://weapons/pistol/pistol.gd" id="1_stn2x"]
 [ext_resource type="Texture2D" uid="uid://cswb5do8rrj7q" path="res://weapons/pistol/pistol.png" id="3_dvr7i"]
+[ext_resource type="AudioStream" uid="uid://dvvyivh88oj67" path="res://audio/bullet.wav" id="3_wx6xu"]
 
 [node name="Pistol" type="Node2D"]
 z_index = -1
@@ -17,3 +18,7 @@ offset = Vector2(16.62, 0)
 
 [node name="BulletPoint" type="Marker2D" parent="Pistol"]
 position = Vector2(42, -11)
+
+[node name="BulletSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_wx6xu")
+volume_db = -30.476

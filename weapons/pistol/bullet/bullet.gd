@@ -20,7 +20,9 @@ func _physics_process(delta):
 	if travelled_distance > max_range:
 		queue_free()
 
-func on_impact(_area):
+func on_impact(area):
+	if not area is HurtBox:
+		return
 	queue_free()
 
 	var impact = impact_scene.instantiate()

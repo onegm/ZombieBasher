@@ -46,7 +46,7 @@ script = ExtResource("1_mxavk")
 [node name="Animations" parent="." instance=ExtResource("2_acaa7")]
 
 [node name="Pistol" parent="Animations" instance=ExtResource("3_7ns5k")]
-position = Vector2(18, 26)
+position = Vector2(19.3333, 26)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)

@@ -1,8 +1,9 @@
+AudioStreamPlayer2D
+CollisionShape2D
+HurtBox
 Timer
 Node2D
 HitBox
-CollisionShape2D
-HurtBox
 AnimationPlayer
 AnimationTree
 Area2D
@@ -11,4 +12,3 @@ Sprite2D
 PointLight2D
 MeshInstance2D
 LightOccluder2D
-HSeparator

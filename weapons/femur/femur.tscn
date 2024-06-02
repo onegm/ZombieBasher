@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://gryefw43fjaj"]
+[gd_scene load_steps=8 format=3 uid="uid://gryefw43fjaj"]
 
 [ext_resource type="Texture2D" uid="uid://lijqkybqyohc" path="res://weapons/femur/femur.png" id="1_ble2e"]
 [ext_resource type="Script" path="res://weapons/femur/femur.gd" id="1_kx4vs"]
 [ext_resource type="Script" path="res://weapons/hit_box.gd" id="3_575dn"]
+[ext_resource type="AudioStream" uid="uid://brhvclplcihnp" path="res://audio/whiff.mp3" id="4_bm84s"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ncsl4"]
 radius = 15.3333
@@ -47,7 +48,6 @@ scale = Vector2(1.5, 1.5)
 script = ExtResource("1_kx4vs")
 
 [node name="Femur" type="Sprite2D" parent="."]
-rotation = -0.741597
 texture = ExtResource("1_ble2e")
 offset = Vector2(30, -10)
 flip_h = true
@@ -62,7 +62,6 @@ damage = 2.0
 position = Vector2(31.3333, 0.666667)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_ncsl4")
-disabled = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
@@ -72,3 +71,6 @@ autostart = true
 libraries = {
 "": SubResource("AnimationLibrary_8iqo7")
 }
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_bm84s")

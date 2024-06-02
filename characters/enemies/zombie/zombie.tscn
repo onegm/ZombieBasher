@@ -29,7 +29,7 @@ shape = SubResource("CircleShape2D_8hunw")
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("3_ftnvd")
-damage = 1.0
+damage = 5.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(0, 6)

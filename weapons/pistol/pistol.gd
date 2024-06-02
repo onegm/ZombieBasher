@@ -29,5 +29,6 @@ func shoot():
 	var flash = muzzle_flash.instantiate()
 	flash.global_position = Vector2.ZERO
 	bullet_point.add_child(flash)
+	$BulletSound.play(0.16)
 	
 	
