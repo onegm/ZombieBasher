@@ -23,4 +23,9 @@ func on_home_button_pressed():
 	var home_scene : PackedScene = load("res://ui/start_menu/start_menu.tscn")
 	get_tree().set_pause(false)	
 	get_tree().change_scene_to_packed(home_scene)
+	
+func _input(event):
+	if Input.is_action_just_pressed("pause"):
+		get_tree().set_pause(true)
+		$PauseMenu.set_visible(true)
 

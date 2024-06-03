@@ -1,8 +1,8 @@
 Button
+ColorRect
 RichTextLabel
 TileMap
 Sprite2D
-ColorRect
 AudioStreamPlayer
 Camera2D
 AnimationPlayer

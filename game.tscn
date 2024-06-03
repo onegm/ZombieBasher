@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://y7573egc7yml"]
+[gd_scene load_steps=8 format=3 uid="uid://y7573egc7yml"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_7mwcr"]
 [ext_resource type="PackedScene" uid="uid://5nxdore3bgcy" path="res://characters/player/player.tscn" id="1_b4hr8"]
 [ext_resource type="PackedScene" uid="uid://dxcwp38vn1rsq" path="res://characters/enemies/super_slime/super_slime.tscn" id="2_8pbn8"]
 [ext_resource type="PackedScene" uid="uid://blqc7kyuoi1m5" path="res://util/enemy_spawner.tscn" id="4_drkt5"]
 [ext_resource type="PackedScene" uid="uid://brfd7g3ffffmi" path="res://levels/level1.tscn" id="6_6ak2d"]
+[ext_resource type="PackedScene" uid="uid://dlkc78xoq35qr" path="res://ui/pause_menu/pause_menu.tscn" id="6_7q1la"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2iaoi"]
 bg_color = Color(0.843137, 0.447059, 0.619608, 1)
@@ -80,3 +81,6 @@ text = " Start Menu "
 
 [node name="Level" parent="." instance=ExtResource("6_6ak2d")]
 y_sort_enabled = true
+
+[node name="PauseMenu" parent="." instance=ExtResource("6_7q1la")]
+visible = false
