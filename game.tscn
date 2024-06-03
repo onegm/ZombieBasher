@@ -1,11 +1,32 @@
-[gd_scene load_steps=8 format=3 uid="uid://y7573egc7yml"]
+[gd_scene load_steps=12 format=3 uid="uid://y7573egc7yml"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_7mwcr"]
 [ext_resource type="PackedScene" uid="uid://5nxdore3bgcy" path="res://characters/player/player.tscn" id="1_b4hr8"]
-[ext_resource type="PackedScene" uid="uid://dxcwp38vn1rsq" path="res://characters/enemies/super_slime/super_slime.tscn" id="2_8pbn8"]
-[ext_resource type="PackedScene" uid="uid://blqc7kyuoi1m5" path="res://util/enemy_spawner.tscn" id="4_drkt5"]
+[ext_resource type="PackedScene" uid="uid://dhmhmrth6rdce" path="res://VFX/smoke_explosion/smoke_explosion.tscn" id="2_dbv4b"]
+[ext_resource type="PackedScene" uid="uid://ogik4s70pgwl" path="res://characters/enemies/slime/art/slime_animations.tscn" id="3_7a6fk"]
+[ext_resource type="PackedScene" uid="uid://blqc7kyuoi1m5" path="res://util/enemy_spawner/enemy_spawner.tscn" id="4_drkt5"]
 [ext_resource type="PackedScene" uid="uid://brfd7g3ffffmi" path="res://levels/level1.tscn" id="6_6ak2d"]
-[ext_resource type="PackedScene" uid="uid://dlkc78xoq35qr" path="res://ui/pause_menu/pause_menu.tscn" id="6_7q1la"]
+[ext_resource type="PackedScene" uid="uid://cl626nm5y26kd" path="res://ui/weapon_menu/weapon_selection.tscn" id="7_87gbj"]
+
+[sub_resource type="GDScript" id="GDScript_ujlla"]
+script/source = "extends Enemy
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dsjb7"]
+radius = 43.2897
+
+[sub_resource type="PackedScene" id="PackedScene_s8b3e"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("SuperSlime", "CharacterBody2D", "scale", "collision_layer", "collision_mask", "motion_mode", "platform_floor_layers", "script", "health", "speed", "death_scene", "Animations", "CollisionShape2D", "CollisionShape2D", "position", "shape"),
+"node_count": 3,
+"node_paths": [NodePath("."), NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 9, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10, 8, 0, 1073741824, 0, 2147483647, 11, 9, 0, 0, 1073741825, 0, 13, 12, -1, 2, 14, 10, 15, 11, 0),
+"variants": [Vector2(2, 2), 2, 3, 1, 4294901760, SubResource("GDScript_ujlla"), 10, 50, ExtResource("2_dbv4b"), ExtResource("3_7a6fk"), Vector2(-2, -29), SubResource("CircleShape2D_dsjb7")],
+"version": 3
+}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2iaoi"]
 bg_color = Color(0.843137, 0.447059, 0.619608, 1)
@@ -13,17 +34,26 @@ bg_color = Color(0.843137, 0.447059, 0.619608, 1)
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_7mwcr")
-enemy_scene = ExtResource("2_8pbn8")
+enemy_scene = SubResource("PackedScene_s8b3e")
 
 [node name="Player" parent="." instance=ExtResource("1_b4hr8")]
-position = Vector2(461, 333)
+position = Vector2(889, 365)
 
 [node name="EnemySpawner" parent="Player" instance=ExtResource("4_drkt5")]
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(0.8, 0.8)
+zoom = Vector2(0.6, 0.6)
 limit_left = 0
 limit_top = 0
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.1
+drag_top_margin = 0.1
+drag_right_margin = 0.1
+drag_bottom_margin = 0.1
+editor_draw_drag_margin = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 1.5
@@ -82,5 +112,5 @@ text = " Start Menu "
 [node name="Level" parent="." instance=ExtResource("6_6ak2d")]
 y_sort_enabled = true
 
-[node name="PauseMenu" parent="." instance=ExtResource("6_7q1la")]
-visible = false
+[node name="WeaponSelection" parent="." node_paths=PackedStringArray("player") instance=ExtResource("7_87gbj")]
+player = NodePath("../Player")

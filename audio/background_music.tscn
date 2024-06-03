@@ -5,4 +5,4 @@
 [node name="BackgroundMusic" type="AudioStreamPlayer"]
 process_mode = 3
 stream = ExtResource("1_pbmkw")
-autoplay = true
+volume_db = -0.505

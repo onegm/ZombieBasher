@@ -1,16 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://pw413e725wqw"]
+[gd_scene load_steps=6 format=3 uid="uid://pw413e725wqw"]
 
 [ext_resource type="Script" path="res://weapons/pistol/bullet/bullet.gd" id="1_5axeu"]
 [ext_resource type="Texture2D" uid="uid://dftkbqwsfd68r" path="res://weapons/pistol/bullet/projectile.png" id="1_q8ndo"]
 [ext_resource type="PackedScene" uid="uid://kcl4efkvrany" path="res://VFX/impact/impact.tscn" id="2_tqc2k"]
+[ext_resource type="Script" path="res://weapons/hit_box.gd" id="3_fmxq0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vm5i0"]
 radius = 14.0
 
-[node name="Bullet" type="Area2D"]
+[node name="Bullet" type="Node2D"]
 top_level = true
-collision_layer = 0
-collision_mask = 3
 script = ExtResource("1_5axeu")
 impact_scene = ExtResource("2_tqc2k")
 
@@ -18,6 +17,12 @@ impact_scene = ExtResource("2_tqc2k")
 position = Vector2(-11, 0)
 texture = ExtResource("1_q8ndo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("3_fmxq0")
+damage = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_vm5i0")

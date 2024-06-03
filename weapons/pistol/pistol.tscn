@@ -1,32 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://buwbdnbx71mx1"]
+[gd_scene load_steps=4 format=3 uid="uid://buwbdnbx71mx1"]
 
 [ext_resource type="Script" path="res://weapons/pistol/pistol.gd" id="1_stn2x"]
-[ext_resource type="PackedScene" uid="uid://c1b2kbuq1if08" path="res://VFX/muzzle_flash/muzzle_flash.tscn" id="2_06nw8"]
-[ext_resource type="PackedScene" uid="uid://pw413e725wqw" path="res://weapons/pistol/bullet/bullet.tscn" id="2_pe3e1"]
 [ext_resource type="Texture2D" uid="uid://cswb5do8rrj7q" path="res://weapons/pistol/pistol.png" id="3_dvr7i"]
+[ext_resource type="AudioStream" uid="uid://dvvyivh88oj67" path="res://audio/bullet.wav" id="3_wx6xu"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0x57p"]
-radius = 636.028
-
-[node name="Pistol" type="Area2D"]
-collision_layer = 0
-collision_mask = 2
+[node name="Pistol" type="Node2D"]
+z_index = -1
 script = ExtResource("1_stn2x")
-muzzle_flash = ExtResource("2_06nw8")
-bullet_scene = ExtResource("2_pe3e1")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_0x57p")
-
-[node name="GunPivotPoint" type="Marker2D" parent="."]
-
-[node name="Pistol" type="Sprite2D" parent="GunPivotPoint"]
-position = Vector2(68, 0)
-texture = ExtResource("3_dvr7i")
-
-[node name="BulletPoint" type="Marker2D" parent="GunPivotPoint/Pistol"]
-position = Vector2(25, -11)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
+
+[node name="Pistol" type="Sprite2D" parent="."]
+texture = ExtResource("3_dvr7i")
+offset = Vector2(16.62, 0)
+
+[node name="BulletPoint" type="Marker2D" parent="Pistol"]
+position = Vector2(42, -11)
+
+[node name="BulletSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_wx6xu")
+volume_db = -30.476

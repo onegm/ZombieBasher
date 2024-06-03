@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://cl626nm5y26kd"]
+
+[ext_resource type="Script" path="res://ui/weapon_menu/weapon_selection.gd" id="1_8qual"]
+[ext_resource type="Texture2D" uid="uid://cswb5do8rrj7q" path="res://weapons/pistol/pistol.png" id="1_icguc"]
+[ext_resource type="Texture2D" uid="uid://lijqkybqyohc" path="res://weapons/femur/femur.png" id="2_fa46x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x04c0"]
+bg_color = Color(0.121569, 0.121569, 0.121569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g8y4x"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="WeaponSelection" type="CanvasLayer"]
+script = ExtResource("1_8qual")
+
+[node name="Control" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.843137, 0.447059, 0.619608, 1)
+
+[node name="FemurLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 742.0
+offset_top = 142.0
+offset_right = 926.0
+offset_bottom = 212.0
+theme_override_font_sizes/normal_font_size = 51
+theme_override_styles/focus = SubResource("StyleBoxFlat_x04c0")
+text = "Femur"
+fit_content = true
+
+[node name="PistolLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 293.0
+offset_top = 141.0
+offset_right = 477.0
+offset_bottom = 211.0
+theme_override_font_sizes/normal_font_size = 51
+theme_override_styles/focus = SubResource("StyleBoxFlat_x04c0")
+text = "Pistol
+"
+fit_content = true
+
+[node name="PistolSprite" type="Sprite2D" parent="Control"]
+position = Vector2(373, 338)
+scale = Vector2(3, 3)
+texture = ExtResource("1_icguc")
+
+[node name="FemurSprite" type="Sprite2D" parent="Control"]
+position = Vector2(830, 288)
+scale = Vector2(3, 3)
+texture = ExtResource("2_fa46x")
+
+[node name="PistolButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 268.0
+offset_top = 263.0
+offset_right = 468.0
+offset_bottom = 413.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_g8y4x")
+
+[node name="FemurButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 708.0
+offset_top = 276.0
+offset_right = 958.0
+offset_bottom = 376.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_g8y4x")

@@ -2,12 +2,15 @@ extends Weapon
 class_name Gun
 
 @onready
-var bullet_point = $GunPivotPoint/Pistol/BulletPoint
-
-@export
-var muzzle_flash : PackedScene
+var bullet_point = $Pistol/BulletPoint
+@onready
+var bullet_scene : PackedScene = preload("res://weapons/pistol/bullet/bullet.tscn")
+@onready
+var muzzle_flash : PackedScene = preload("res://VFX/muzzle_flash/muzzle_flash.tscn")
 
 func target_enemy(enemies_in_range):
+	if enemies_in_range.is_empty():
+		return
 	var closest = enemies_in_range.front()
 	var distance = global_position.distance_to(closest.global_position)
 	for element in enemies_in_range:
@@ -26,5 +29,6 @@ func shoot():
 	var flash = muzzle_flash.instantiate()
 	flash.global_position = Vector2.ZERO
 	bullet_point.add_child(flash)
+	$BulletSound.play(0.16)
 	
 	
