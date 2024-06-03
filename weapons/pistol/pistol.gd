@@ -2,7 +2,7 @@ extends Weapon
 class_name Gun
 
 @onready
-var bullet_point = $Pistol/BulletPoint
+var bullet_point = $BulletPoint
 @onready
 var bullet_scene : PackedScene = preload("res://weapons/pistol/bullet/bullet.tscn")
 @onready
@@ -30,5 +30,6 @@ func shoot():
 	flash.global_position = Vector2.ZERO
 	bullet_point.add_child(flash)
 	$BulletSound.play(0.16)
+	
 	
 	

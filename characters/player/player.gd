@@ -22,16 +22,7 @@ func _physics_process(_delta):
 		animations.play_walk_animation()
 	else:
 		animations.play_idle_animation()
-	
-	#check_damage(delta)
-#
-#func check_damage(delta):
-	#var overlapping_enemies = $HurtBox.get_overlapping_bodies()
-	#health -= damage_rate*overlapping_enemies.size()*delta
-	#$HealthBar.set_value(health)
-	#
-	#if health <= 0.0:
-		#health_depleted.emit()
+
 func take_damage(damage):
 	health -= damage
 	$HealthBar.set_value(health)

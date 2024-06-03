@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://pw413e725wqw"]
+[gd_scene load_steps=7 format=3 uid="uid://pw413e725wqw"]
 
 [ext_resource type="Script" path="res://weapons/pistol/bullet/bullet.gd" id="1_5axeu"]
 [ext_resource type="Texture2D" uid="uid://dftkbqwsfd68r" path="res://weapons/pistol/bullet/projectile.png" id="1_q8ndo"]
 [ext_resource type="PackedScene" uid="uid://kcl4efkvrany" path="res://VFX/impact/impact.tscn" id="2_tqc2k"]
 [ext_resource type="Script" path="res://weapons/hit_box.gd" id="3_fmxq0"]
+[ext_resource type="Texture2D" uid="uid://dc315dc35b3vw" path="res://weapons/pistol/Gun.png" id="5_ttgwr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vm5i0"]
 radius = 14.0
@@ -14,6 +15,7 @@ script = ExtResource("1_5axeu")
 impact_scene = ExtResource("2_tqc2k")
 
 [node name="Projectile" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-11, 0)
 texture = ExtResource("1_q8ndo")
 
@@ -26,3 +28,11 @@ damage = 1.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_vm5i0")
+
+[node name="Bullet" type="Polygon2D" parent="."]
+rotation = 1.5708
+scale = Vector2(5, 5)
+offset = Vector2(-55.635, -54.74)
+texture = ExtResource("5_ttgwr")
+polygon = PackedVector2Array(53.6964, 51.9748, 53.7589, 58.0998, 57.6964, 58.0998, 57.6339, 51.1623)
+uv = PackedVector2Array(53.6964, 51.9748, 53.7589, 58.0998, 57.6964, 58.0998, 57.6339, 51.1623)
