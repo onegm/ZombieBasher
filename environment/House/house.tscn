@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://bh03tbd0fd0b0"]
+
+[ext_resource type="Texture2D" uid="uid://bpss58efc0kkl" path="res://environment/House/house.png" id="1_b51cg"]
+[ext_resource type="Script" path="res://weapons/hurt_box.gd" id="2_48ndp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_koxre"]
+size = Vector2(222, 399)
+
+[sub_resource type="Gradient" id="Gradient_f7ocq"]
+offsets = PackedFloat32Array(0, 0.701299)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wwnh4"]
+gradient = SubResource("Gradient_f7ocq")
+width = 200
+height = 500
+fill = 1
+fill_from = Vector2(0.486239, 0.509174)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20acb"]
+size = Vector2(227, 395)
+
+[node name="House" type="Node2D"]
+scale = Vector2(2, 2)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.752941, 0.435294, 0.156863, 1)
+offset = Vector2(-247.475, -215.415)
+texture = ExtResource("1_b51cg")
+polygon = PackedVector2Array(127.798, 64.3755, 133.374, 449.742, 367.277, 452.876, 367.913, 47.8228, 130.607, 47.5637)
+uv = PackedVector2Array(127.798, 64.3755, 133.374, 449.742, 367.277, 452.876, 367.913, 47.8228, 130.607, 47.5637)
+
+[node name="Rocks" type="Polygon2D" parent="."]
+z_index = -2
+position = Vector2(119, 26)
+color = Color(0.439216, 0.435294, 0.380392, 1)
+offset = Vector2(-366.135, -228.66)
+texture = ExtResource("1_b51cg")
+polygon = PackedVector2Array(500.555, 169.844, 363.25, 167.253, 363.509, 282.279, 368.69, 282.538, 444.079, 315.18, 496.41, 315.698)
+uv = PackedVector2Array(500.555, 169.844, 363.25, 167.253, 363.509, 282.279, 368.69, 282.538, 444.079, 315.18, 496.41, 315.698)
+
+[node name="Bushes" type="Polygon2D" parent="."]
+z_index = -2
+scale = Vector2(1, 0.9)
+color = Color(0.176471, 0.807843, 0.439216, 1)
+offset = Vector2(-247.34, -210.295)
+texture = ExtResource("1_b51cg")
+polygon = PackedVector2Array(136.242, 461.474, 136.913, 29.9302, 363.087, 28.5879, 361.074, 472.212, 439.597, 431.944, 428.188, 308.454, 363.087, 274.897, 364.078, 168.465, 407.586, 170.55, 432.759, 115.378, 400, 17.1021, 54.1379, 18.8262, 78.0488, 460.729)
+uv = PackedVector2Array(136.242, 461.474, 136.913, 29.9302, 363.087, 28.5879, 361.074, 472.212, 439.597, 431.944, 428.188, 308.454, 363.087, 274.897, 364.078, 168.465, 407.586, 170.55, 432.759, 115.378, 400, 17.1021, 54.1379, 18.8262, 78.0488, 460.729)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 34.5)
+shape = SubResource("RectangleShape2D_koxre")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = SubResource("GradientTexture2D_wwnh4")
+
+[node name="HurtBox" type="Area2D" parent="."]
+script = ExtResource("2_48ndp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, 31.5)
+shape = SubResource("RectangleShape2D_20acb")
