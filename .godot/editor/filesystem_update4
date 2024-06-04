@@ -1,5 +1,10 @@
-res://environment/House/house.tscn
 res://environment/trees/tree.tscn
 res://game.tscn
 res://levels/level1.tscn
 res://weapons/pistol/bullet/bullet.tscn
+res://ui/pause_menu/pause_menu.gd
+res://ui/pause_menu/pause_menu.tscn
+res://environment/House/house.tscn
+res://game.gd
+res://ui/weapon_menu/weapon_selection.tscn
+res://characters/player/player.tscn

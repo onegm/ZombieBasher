@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cl626nm5y26kd"]
+[gd_scene load_steps=9 format=3 uid="uid://cl626nm5y26kd"]
 
 [ext_resource type="Script" path="res://ui/weapon_menu/weapon_selection.gd" id="1_8qual"]
 [ext_resource type="Texture2D" uid="uid://cswb5do8rrj7q" path="res://weapons/pistol/pistol.png" id="1_icguc"]
@@ -9,6 +9,12 @@ bg_color = Color(0.121569, 0.121569, 0.121569, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g8y4x"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hx6jx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ihg6d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_quow1"]
 
 [node name="WeaponSelection" type="CanvasLayer"]
 script = ExtResource("1_8qual")
@@ -71,6 +77,9 @@ offset_top = 263.0
 offset_right = 468.0
 offset_bottom = 413.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_g8y4x")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hx6jx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ihg6d")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_quow1")
 
 [node name="FemurButton" type="Button" parent="Control"]
 layout_mode = 0
@@ -79,3 +88,6 @@ offset_top = 276.0
 offset_right = 958.0
 offset_bottom = 376.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_g8y4x")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hx6jx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ihg6d")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_quow1")

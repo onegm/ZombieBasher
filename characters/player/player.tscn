@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://5nxdore3bgcy"]
+[gd_scene load_steps=12 format=3 uid="uid://5nxdore3bgcy"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_mxavk"]
 [ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/player/art/player_animations.tscn" id="2_acaa7"]
@@ -34,6 +34,14 @@ width = 80
 height = 80
 fill = 1
 fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_cgfvg"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4uo32"]
+gradient = SubResource("Gradient_cgfvg")
+fill_from = Vector2(0, 0.527066)
+fill_to = Vector2(1, 0.498576)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -71,3 +79,8 @@ show_percentage = false
 [node name="PointLight2D" type="PointLight2D" parent="."]
 energy = 0.5
 texture = SubResource("GradientTexture2D_jklk3")
+
+[node name="FlashLight" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(57, -44)
+texture = SubResource("GradientTexture2D_4uo32")
