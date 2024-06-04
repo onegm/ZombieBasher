@@ -24,7 +24,7 @@ func on_home_button_pressed():
 	get_tree().set_pause(false)	
 	get_tree().change_scene_to_packed(home_scene)
 	
-func _input(event):
+func _input(_event):
 	if Input.is_action_just_pressed("pause"):
 		get_tree().set_pause(true)
 		$PauseMenu.set_visible(true)
