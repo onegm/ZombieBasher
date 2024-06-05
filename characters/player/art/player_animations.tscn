@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://pbmyh1qru7p"]
+[gd_scene load_steps=8 format=3 uid="uid://pbmyh1qru7p"]
 
 [ext_resource type="Script" path="res://characters/player/art/player_animations.gd" id="1_sirfq"]
 [ext_resource type="Texture2D" uid="uid://b7rhtttevhxtj" path="res://characters/enemies/slime/art/ground_shadow.png" id="2_hi7lp"]
-[ext_resource type="Texture2D" uid="uid://c42ag8qgb84h2" path="res://characters/player/art/girl.png" id="8_h77wl"]
+[ext_resource type="Texture2D" uid="uid://th2mcp7ndqq3" path="res://characters/enemies/zombie/art/zombie.png" id="3_daleb"]
+[ext_resource type="Texture2D" uid="uid://c4daiowe5upl2" path="res://characters/player/art/Back hair.png" id="4_crmgo"]
+[ext_resource type="Texture2D" uid="uid://cxeimqdfcgq4u" path="res://characters/player/art/Boy-Hair.png" id="6_f4dt4"]
+[ext_resource type="Texture2D" uid="uid://c2gmuxp721qnh" path="res://characters/player/art/girl.png" id="8_h77wl"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jqixc"]
+load_path = "res://.godot/imported/girl.png-449321597dd2a321b2ff8b28fa303417.ctex"
 
 [node name="HappyBoo" type="Node2D"]
 scale = Vector2(1.5, 1.5)
@@ -21,24 +27,16 @@ texture = ExtResource("2_hi7lp")
 rotation = -1.5708
 color = Color(0.662745, 0.494118, 0.411765, 1)
 offset = Vector2(-62.17, -41.835)
-texture = ExtResource("8_h77wl")
+texture = ExtResource("3_daleb")
 polygon = PackedVector2Array(33.6011, 7.36278, 31.7269, 29.8527, 31.593, 44.7122, 35.4752, 58.9023, 47.925, 70.0134, 65.0602, 72.9585, 78.8487, 68.9424, 93.5743, 57.162, 97.8581, 35.4752, 93.9759, 26.506, 94.5114, 13.9224, 92.1017, 1.74029, 70.4741, -1.72414, 46.837, -1.70316)
 uv = PackedVector2Array(33.6011, 7.36278, 31.7269, 29.8527, 31.593, 44.7122, 35.4752, 58.9023, 47.925, 70.0134, 65.0602, 72.9585, 78.8487, 68.9424, 93.5743, 57.162, 97.8581, 35.4752, 93.9759, 26.506, 94.5114, 13.9224, 92.1017, 1.74029, 70.4741, -1.72414, 46.837, -1.70316)
-
-[node name="Hair" type="Polygon2D" parent="Head"]
-rotation = 1.5708
-color = Color(0.729412, 0.596078, 0.0352941, 1)
-offset = Vector2(-30.935, -35.65)
-texture = ExtResource("8_h77wl")
-polygon = PackedVector2Array(33.455, 7.54258, 32.2384, 27.9805, 31.5085, 42.7007, 35.2798, 62.2871, 31.5085, 64.9635, 20.3163, 64.7202, 8.27251, 57.7859, 2.18978, 42.944, 0.729927, 29.927, 3.16302, 18.7348, 9.3674, 12.6521, 19.0998, 8.51581, 28.4672, 6.93431)
-uv = PackedVector2Array(33.455, 7.54258, 32.2384, 27.9805, 31.5085, 42.7007, 35.2798, 62.2871, 31.5085, 64.9635, 20.3163, 64.7202, 8.27251, 57.7859, 2.18978, 42.944, 0.729927, 29.927, 3.16302, 18.7348, 9.3674, 12.6521, 19.0998, 8.51581, 28.4672, 6.93431)
 
 [node name="HandR" type="Polygon2D" parent="."]
 position = Vector2(16.6667, -28.6667)
 rotation = -1.5708
 color = Color(0.662745, 0.494118, 0.411765, 1)
 offset = Vector2(-42.1, -83.815)
-texture = ExtResource("8_h77wl")
+texture = SubResource("CompressedTexture2D_jqixc")
 polygon = PackedVector2Array(34.0027, 72.9585, 30.9237, 85.0067, 34.0027, 93.1727, 38.9558, 93.7082, 49.5315, 93.7082, 53.0121, 87.5502, 54.7523, 81.2584, 52.3427, 73.494, 45.2477, 69.7457, 39.2236, 70.2811)
 uv = PackedVector2Array(34.0027, 72.9585, 30.9237, 85.0067, 34.0027, 93.1727, 38.9558, 93.7082, 49.5315, 93.7082, 53.0121, 87.5502, 54.7523, 81.2584, 52.3427, 73.494, 45.2477, 69.7457, 39.2236, 70.2811)
 
@@ -47,6 +45,34 @@ position = Vector2(18, 26)
 rotation = -1.5708
 color = Color(0.662745, 0.494118, 0.411765, 1)
 offset = Vector2(-83.205, -81.54)
-texture = ExtResource("8_h77wl")
+texture = SubResource("CompressedTexture2D_jqixc")
 polygon = PackedVector2Array(72.1553, 74.0295, 80.7229, 67.6038, 89.5582, 69.2102, 93.842, 73.8956, 95.4485, 83.4003, 91.7001, 90.3615, 80.589, 93.1727, 72.1553, 87.8179, 72.423, 78.9826)
 uv = PackedVector2Array(72.1553, 74.0295, 80.7229, 67.6038, 89.5582, 69.2102, 93.842, 73.8956, 95.4485, 83.4003, 91.7001, 90.3615, 80.589, 93.1727, 72.1553, 87.8179, 72.423, 78.9826)
+
+[node name="Girl" type="Node2D" parent="."]
+visible = false
+
+[node name="Hair" type="Polygon2D" parent="Girl"]
+color = Color(0.313726, 0.682353, 0.639216, 1)
+offset = Vector2(-30.935, -35.65)
+texture = ExtResource("8_h77wl")
+polygon = PackedVector2Array(33.455, 7.54258, 32.2384, 27.9805, 31.5085, 42.7007, 35.2798, 62.2871, 31.5085, 64.9635, 20.3163, 64.7202, 8.27251, 57.7859, 2.18978, 42.944, 0.729927, 29.927, 3.16302, 18.7348, 9.3674, 12.6521, 19.0998, 8.51581, 28.4672, 6.93431)
+uv = PackedVector2Array(33.455, 7.54258, 32.2384, 27.9805, 31.5085, 42.7007, 35.2798, 62.2871, 31.5085, 64.9635, 20.3163, 64.7202, 8.27251, 57.7859, 2.18978, 42.944, 0.729927, 29.927, 3.16302, 18.7348, 9.3674, 12.6521, 19.0998, 8.51581, 28.4672, 6.93431)
+
+[node name="HairBack" type="Polygon2D" parent="Girl"]
+rotation = -1.5708
+color = Color(0.313726, 0.682353, 0.639216, 1)
+offset = Vector2(-63.025, -55.3)
+texture = ExtResource("4_crmgo")
+polygon = PackedVector2Array(26.3359, 12.5954, 27.8626, 56.8702, 61.8321, 40.458, 86.2595, 62.5954, 98.0916, 40.458, 96.5649, 13.3588)
+uv = PackedVector2Array(26.3359, 12.5954, 27.8626, 56.8702, 61.8321, 40.458, 86.2595, 62.5954, 98.0916, 40.458, 96.5649, 13.3588)
+
+[node name="Boy" type="Node2D" parent="."]
+
+[node name="Hair" type="Polygon2D" parent="Boy"]
+position = Vector2(-4, -0.666667)
+color = Color(0.611765, 0.282353, 0, 1)
+offset = Vector2(-30.935, -35.65)
+texture = ExtResource("6_f4dt4")
+polygon = PackedVector2Array(33.455, 7.54258, 32.2384, 27.9805, 31.5085, 42.7007, 35.2798, 62.2871, 31.5085, 64.9635, 20.3163, 64.7202, 8.27251, 57.7859, 2.18978, 42.944, 0.729927, 29.927, 3.16302, 18.7348, 9.3674, 12.6521, 19.0998, 8.51581, 28.4672, 6.93431)
+uv = PackedVector2Array(33.455, 7.54258, 32.2384, 27.9805, 31.5085, 42.7007, 35.2798, 62.2871, 31.5085, 64.9635, 20.3163, 64.7202, 8.27251, 57.7859, 2.18978, 42.944, 0.729927, 29.927, 3.16302, 18.7348, 9.3674, 12.6521, 19.0998, 8.51581, 28.4672, 6.93431)

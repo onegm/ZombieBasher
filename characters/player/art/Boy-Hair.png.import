@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2ent6mf1y7w7"
-path="res://.godot/imported/square_ref.png-6cab9634f21bc60f861f39de9532cab0.ctex"
+uid="uid://cxeimqdfcgq4u"
+path="res://.godot/imported/Boy-Hair.png-822e8e97f3d8dfd38db3a036ebc13cc3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/player/art/square_ref.png"
-dest_files=["res://.godot/imported/square_ref.png-6cab9634f21bc60f861f39de9532cab0.ctex"]
+source_file="res://characters/player/art/Boy-Hair.png"
+dest_files=["res://.godot/imported/Boy-Hair.png-822e8e97f3d8dfd38db3a036ebc13cc3.ctex"]
 
 [params]
 

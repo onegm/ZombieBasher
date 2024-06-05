@@ -3,7 +3,7 @@ extends Node2D
 var speed = 1000
 var damage = 1
 var max_range = 1200
-var travelled_distance = 0
+var travelled_distance = 100
 
 @export
 var impact_scene : PackedScene

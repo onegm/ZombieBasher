@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhapxq8y8ow57"
-path="res://.godot/imported/square_lower_leg.png-c10847d7b7b0be56605b5ca0edce3cba.ctex"
+uid="uid://c4daiowe5upl2"
+path="res://.godot/imported/Back hair.png-de9319f3d75a1cac2280a7ac15911de3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/player/art/square_lower_leg.png"
-dest_files=["res://.godot/imported/square_lower_leg.png-c10847d7b7b0be56605b5ca0edce3cba.ctex"]
+source_file="res://characters/player/art/Back hair.png"
+dest_files=["res://.godot/imported/Back hair.png-de9319f3d75a1cac2280a7ac15911de3.ctex"]
 
 [params]
 

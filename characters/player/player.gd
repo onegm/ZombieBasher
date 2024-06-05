@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 var speed = 600
-var health = 100.0
+var health = 1.0
 var damage_rate = 5.0
 var current_weapon : Weapon = null
 

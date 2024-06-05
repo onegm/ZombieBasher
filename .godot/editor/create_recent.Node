@@ -1,9 +1,10 @@
+Node2D
+Polygon2D
 PointLight2D
 DirectionalLight2D
 CollisionShape2D
 HurtBox
 Area2D
-Polygon2D
 Sprite2D
 StaticBody2D
 CPUParticles2D
@@ -11,4 +12,3 @@ CanvasLayer
 Button
 RichTextLabel
 ColorRect
-AudioStreamPlayer2D

@@ -1,6 +1,6 @@
 extends Weapon
 
-var damage = 2
+var damage = 200
 
 func shoot():
 	$AnimationPlayer.play("slash")
