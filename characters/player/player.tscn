@@ -1,8 +1,24 @@
-[gd_scene load_steps=12 format=3 uid="uid://5nxdore3bgcy"]
+[gd_scene load_steps=14 format=3 uid="uid://5nxdore3bgcy"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_mxavk"]
 [ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/player/art/player_animations.tscn" id="2_acaa7"]
 [ext_resource type="Script" path="res://weapons/hurt_box.gd" id="4_pwyg6"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_l1mgw"]
+
+[sub_resource type="Gradient" id="Gradient_6lkuh"]
+colors = PackedColorArray(1, 1, 1, 0.776471, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kpk08"]
+gradient = SubResource("Gradient_6lkuh")
+width = 1300
+height = 1300
+fill = 1
+fill_from = Vector2(0.509174, 0.527523)
+fill_to = Vector2(1, 0.577982)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gn257"]
+polygon = PackedVector2Array(-14, -7, -14, 5, 8, 4, 22, 10, 24, 5, 8, -1, -9, -1, -9, -7, 9, -8, 20, -15, 15, -20, 7, -13, -14, -12)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8mguc"]
 radius = 35.0143
@@ -35,14 +51,6 @@ height = 80
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[sub_resource type="Gradient" id="Gradient_cgfvg"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_4uo32"]
-gradient = SubResource("Gradient_cgfvg")
-fill_from = Vector2(0, 0.527066)
-fill_to = Vector2(1, 0.498576)
-
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 5
@@ -50,7 +58,24 @@ motion_mode = 1
 platform_floor_layers = 4294901760
 script = ExtResource("1_mxavk")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.00187888, 0.0953781, 0.0301099, 1)
+scale = Vector2(1000, 1000)
+texture = SubResource("CanvasTexture_l1mgw")
+
 [node name="Animations" parent="." instance=ExtResource("2_acaa7")]
+
+[node name="FlashLight" type="PointLight2D" parent="Animations"]
+position = Vector2(16.6667, -28.6667)
+scale = Vector2(0.666667, 0.666667)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_kpk08")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Animations"]
+position = Vector2(16, -25.3333)
+scale = Vector2(0.666667, 0.666667)
+occluder = SubResource("OccluderPolygon2D_gn257")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)
@@ -79,8 +104,3 @@ show_percentage = false
 [node name="PointLight2D" type="PointLight2D" parent="."]
 energy = 0.5
 texture = SubResource("GradientTexture2D_jklk3")
-
-[node name="FlashLight" type="PointLight2D" parent="."]
-visible = false
-position = Vector2(57, -44)
-texture = SubResource("GradientTexture2D_4uo32")

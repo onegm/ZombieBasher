@@ -70,6 +70,5 @@ position = Vector2(980, 1827)
 rotation = 1.5708
 
 [node name="Darkness" type="DirectionalLight2D" parent="."]
-visible = false
 energy = 0.8
 blend_mode = 1

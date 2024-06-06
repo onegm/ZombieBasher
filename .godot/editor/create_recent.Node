@@ -1,3 +1,6 @@
+LightOccluder2D
+Sprite2D
+Marker2D
 Node2D
 Polygon2D
 PointLight2D
@@ -5,10 +8,7 @@ DirectionalLight2D
 CollisionShape2D
 HurtBox
 Area2D
-Sprite2D
 StaticBody2D
 CPUParticles2D
 CanvasLayer
 Button
-RichTextLabel
-ColorRect

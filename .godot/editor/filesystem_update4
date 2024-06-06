@@ -3,6 +3,5 @@ res://levels/level1.tscn
 res://characters/player/player.tscn
 res://ui/start_menu/start_menu.tscn
 res://characters/player/art/player_animations.tscn
-res://weapons/pistol/bullet/bullet.gd
-res://weapons/femur/femur.gd
 res://characters/player/player.gd
+res://environment/trees/tree.tscn

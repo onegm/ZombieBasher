@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cdq2mn73x5nr4"]
+[gd_scene load_steps=10 format=3 uid="uid://cdq2mn73x5nr4"]
 
 [ext_resource type="Script" path="res://environment/trees/tree.gd" id="1_kb834"]
 [ext_resource type="Texture2D" uid="uid://ck8lp2x3r5nqs" path="res://environment/trees/tree_trunk.png" id="2_hcvpn"]
@@ -6,14 +6,17 @@
 [ext_resource type="Script" path="res://weapons/hurt_box.gd" id="5_auk6e"]
 [ext_resource type="AudioStream" uid="uid://hwwoj6ltac25" path="res://audio/tree_shake.wav" id="6_lesfl"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_g4g5s"]
-radius = 49.2544
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_mjg0b"]
 radius = 146.769
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gg6d6"]
 radius = 60.075
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4g5s"]
+radius = 49.2544
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_y4cqx"]
+polygon = PackedVector2Array(0, -60, -16, -58, -33, -50, -46, -39, -55, -25, -60, -10, -60, 10, -50, 35, -34, 49, -17, 58, 4, 60, 27, 53, 45, 39, 57, 18, 60, -11, 52, -27, 37, -44, 20, -56)
 
 [node name="Tree" type="StaticBody2D"]
 y_sort_enabled = true
@@ -29,9 +32,6 @@ texture = ExtResource("2_hcvpn")
 modulate = Color(0.156863, 0.564706, 0.211765, 1)
 texture = ExtResource("3_m2yu0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_g4g5s")
-
 [node name="CharacterDetector" type="Area2D" parent="."]
 collision_mask = 2
 
@@ -46,5 +46,11 @@ script = ExtResource("5_auk6e")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("CircleShape2D_gg6d6")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_g4g5s")
+
 [node name="Sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_lesfl")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_y4cqx")
